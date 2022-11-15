@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "Inter";
     font-size: 15px;
+    box-sizing: border-box;
 }
 
 body ul li {
@@ -14,18 +15,26 @@ a {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
     margin-left: 40px;
     margin-bottom: 30px;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 .menu {
     display: flex;
-    justify-content: space-between;
+    gap: 1em;
     margin-right: 180px;
 }
+
+input[type=checkbox]{
+    display: none;
+   }
 
 .menu li {
     margin-left: 10px;  
@@ -38,6 +47,15 @@ header {
 
 .menu li a:hover {
     color: hsl(5, 85%, 63%);
+    transition: .3s ease;
+}
+
+.menu-open {
+    display: none;
+}
+
+.menu-close {
+    display: none;
 }
 
 .grid1 {
@@ -49,7 +67,7 @@ header {
 
 .grid1 .grid1-img img {
     width: 116%;
-    height: 60%;
+    height: 38%;
 }
 
 .grid1-img-p {
@@ -98,6 +116,7 @@ header {
     background-color: hsl(240, 100%, 5%);
     width: 53%;
     margin-left: 80px;
+    height: 60%;
 }
 
 .grid-box-div {
@@ -166,7 +185,7 @@ header {
 .grid2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 70px;
+    margin-top: -200px;
     margin-left: 35px;
 
     max-width: 80%;
@@ -236,7 +255,7 @@ header {
     font-weight: 800;
     font-size: 1.2em;
 
-    margin-right: -30px;
+    margin-right: -60px;
 }
 
 .grid2-box-h3:hover {
@@ -258,5 +277,119 @@ header {
 }
 
 @media screen and (max-width: 375px) {
+
+    * {
+        left: 0;
+        right: 0;
+    }
+
+    .menu-open {
+        display: inline-flex;
+        margin-left: 260px;
+        max-width: 375px;
+    }
+
+    .menu {
+        display: none;
+        position:absolute;
+        background-color: white;
+        height: 100vh;
+        max-width: 100%;
+    }
+
+    .menu li a {
+        padding: 10px;
+        color: hsl(240, 100%, 5%);
+        font-weight: bold;
+    }
+
+    .menu-list{
+        margin-top: 100px;
+        max-width: 20%;
+    }
+
+    input[type=checkbox]:checked ~ .menu{
+        display: block; 
+        line-height: 50px;
+       }
+
+    input[type=checkbox]:checked ~ .menu-open{
+        display: none;
+       }
+
+    input[type=checkbox]:checked ~ .menu-close{
+        display: block;
+        padding-left: 200px;
+       }
+
+    input[type=checkbox]:checked ~ body{
+        backdrop-filter:unset;
+       }
+
+    .grid1{
+        display: inline-block;
+    }
+
+    .grid1-img-p {
+        display: inline-block;
+    }
+
+    .grid1-img-p1 {
+        font-size: 50px;
+        max-width: 375px;
+    }
+
+    .grid1-img-p2 {
+        display: inline-block;
+        margin-left: 0;
+        max-width: 350px;
+    }
+
+    .grid1-box {
+        display: inline-flex;
+        flex-direction: column;
+        margin-top: 50px;
+        max-width: 375px;
+        width: 100%;
+        margin-left: 0;
+        
+    }
+
+    .grid-box-div-p3 {
+        margin-bottom: 30px;
+    }
     
+    .grid2 {
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 70px;
+    }    
+
+    .grid2-img {
+        max-width: 100px;
+    }
+
+    .grid2 div {
+        margin-left: 0;
+        height: 200px;
+        padding-left: 20px;
+    }
+
+    .grid2 h3 {
+        min-width: 220px;
+    }
+
+    .grid2 p {
+        min-width: 200px;
+    }
+
+    .grid2-box2 {
+        margin-top: -60px;
+        margin-bottom: -60px;
+    }
+
+    .grid2-box3 div {
+        margin-left: -15px;
+        padding-left: 40px;
+    }
 }

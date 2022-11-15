@@ -29,23 +29,31 @@
 <body>
 
   <header class="header">
-    <img src="./assets/images/logo.svg" alt="logo">
-    <nav>
-      <ul class="menu">
-        <li>
-          <a href="/">Home</a>
-          <a href="/">New</a>
-          <a href="/">Popular</a>
-          <a href="/">Trending</a>
-          <a href="/">Categories</a>
-        </li>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./assets/images/logo.svg">
+      </div>
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle">
+        <label for="checkbox_toggle" class="menu-open"><img src="./assets/images/icon-menu.svg"></label>
+        <label for="checkbox_toggle" class="menu-close"><img src="./assets/images/icon-menu-close.svg"></label>
+        <div class="menu">
+          <li class="menu-list">
+            <a href="/">Home</a>
+            <a href="/">New</a>
+            <a href="/">Popular</a>
+            <a href="/">Trending</a>
+            <a href="/">Categories</a>
+          </li>
+        </div>
       </ul>
     </nav>
   </header>
 
   <section class="grid1">
     <div class="grid1-img">
-      <img src="./assets/images/image-web-3-desktop.jpg">
+      <img src="./assets/images/image-web-3-desktop.jpg" srcset="./assets/images/image-web-3-mobile.jpg"
+            sizes="(min-width:375px) 375px">
       <div class="grid1-img-p">
         <p class="grid1-img-p1">The Bright Future of Web 3.0?</p>
         <p class="grid1-img-p2">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
@@ -102,10 +110,9 @@
   </section>  
   
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <br>
     Coded by <a href="https://github.com/pedroasso" target="_blank" rel="noreferrer noopener">Pedro Laranjeira</a>.
   </div>
 
-  <script src="./js/index.js"></script>
 </body>
 </html>
